@@ -6,7 +6,7 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import { DriveConfig } from '@ioc:Adonis/Core/Drive'
+import { driveConfig } from '@adonisjs/core/build/config'
 import Application from '@ioc:Adonis/Core/Application'
 
 /*
@@ -18,7 +18,7 @@ import Application from '@ioc:Adonis/Core/Application'
 | defined inside the `contracts` directory.
 |
 */
-const driveConfig: DriveConfig = {
+export default driveConfig({
   /*
   |--------------------------------------------------------------------------
   | Default disk
@@ -125,7 +125,7 @@ const driveConfig: DriveConfig = {
     //   keyFilename: Env.get('GCS_KEY_FILENAME'),
     //   bucket: Env.get('GCS_BUCKET'),
 
-    /*
+      /*
       |--------------------------------------------------------------------------
       | Uniform ACL - Google cloud storage only
       |--------------------------------------------------------------------------
@@ -146,6 +146,4 @@ const driveConfig: DriveConfig = {
     //   usingUniformAcl: false,
     // },
   },
-}
-
-export default driveConfig
+})
