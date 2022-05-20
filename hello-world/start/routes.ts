@@ -34,3 +34,5 @@ Route.group(() => {
   Route.post('usuarios/registro', 'PostsController.index')
 }).prefix('api/v2');
 
+Route.post('user/register', 'UsersController.index')
+
