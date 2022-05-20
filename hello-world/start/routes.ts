@@ -21,5 +21,16 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
+  return { hello: 'world, continue with the practice of the create of the API-REST' }
 })
+
+Route.post('usuarios/registro', 'PostsController.index')
+
+Route.group(() => {
+  Route.post('usuarios/registro', 'PostsController.index')
+}).prefix('api/v1');
+
+Route.group(() => {
+  Route.post('usuarios/registro', 'PostsController.index')
+}).prefix('api/v2');
+
